@@ -72,10 +72,9 @@ TEMPLATES = [
 WSGI_APPLICATION = "backend.wsgi.application"
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {"default": {"ENGINE": "django.db.backends.postgresql", "NAME": "vaxt"}}
+import dj_database_url
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(default='postgres://127.0.0.1/vaxt')
 
 
 # Password validation
